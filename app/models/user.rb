@@ -6,5 +6,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  # User relationship to Post
   has_many :posts, dependent: :destroy
+
+  # User relationship to Comment
+  has_many :comments, dependent: :destroy
 end
